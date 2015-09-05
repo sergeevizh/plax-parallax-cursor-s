@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Parallax.js for WordPress by Systemo
-Plugin URI: ${TM_PLUGIN_BASE}
+Plugin URI: https://github.com/systemo-biz/plax-parallax-cursor-s
 Description: Создает Параллакс эффект от курсора шорткодом типа: [plax-s][plaxify][plaxify x=20 y=33 invert=true selector=".btn"][/plax-s]
-Author: ${TM_NAME}
-Author URI: ${TM_HOMEPAGE}
+Author: Systemo
+Author URI: http://systemo.biz
 Version: 0.1
 */
 
