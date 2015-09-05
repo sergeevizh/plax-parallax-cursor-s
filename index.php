@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name: Parallax.js for WordPress by Systemo
+Plugin Name: Plax jQuery powered parallaxing for WordPress by Systemo
 Plugin URI: https://github.com/systemo-biz/plax-parallax-cursor-s
-Description: Создает Параллакс эффект от курсора шорткодом типа: [plax-s][plaxify][plaxify x=20 y=33 invert=true selector=".btn"][/plax-s]
+Description: Create parallax for site by shortcode: [plax-s][plaxify][plaxify x=20 y=33 invert=true selector=".btn"][/plax-s]
 Author: Systemo
 Author URI: http://systemo.biz
 Version: 0.1
 */
 
 
-
+//Load script
 function load_ss_plax_s(){
 
   wp_register_script( 'plax', plugins_url( '/inc/plax/js/plax.js',__FILE__ ), array('jquery'), '1');
@@ -18,7 +18,7 @@ function load_ss_plax_s(){
 } add_action('wp_enqueue_scripts', 'load_ss_plax_s');
 
 
-
+//Shortcode wrapper
 add_shortcode( 'plax-s', function($atts, $content){
 
   ob_start();
@@ -40,6 +40,8 @@ add_shortcode( 'plax-s', function($atts, $content){
 
 });
 
+
+//Shortcode for parametr
 add_shortcode( 'plaxify', function($atts){
   extract( shortcode_atts( array(
     'selector' => "img",
