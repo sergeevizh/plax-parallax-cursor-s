@@ -20,6 +20,13 @@ function load_ss_plax_s(){
 
 //Shortcode wrapper
 add_shortcode( 'plax-s', function($atts, $content){
+  extract( shortcode_atts( array(
+    'selector' => "body",
+  ), $atts ));
+
+  $parametrs = '';
+  if($activityTarget) $parametrs = '{ "activityTarget": $("'. $selector .'")}';
+
 
   ob_start();
   ?>
@@ -28,7 +35,7 @@ add_shortcode( 'plax-s', function($atts, $content){
     (function ($) {
       <?php echo do_shortcode( $content ); ?>
 
-      $.plax.enable();
+      $.plax.enable(<?php echo $parametrs ?>);
     }(jQuery));
   </script>
 
